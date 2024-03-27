@@ -18,8 +18,4 @@ const Button: FC<Props> = ({ text, color, onClick }) => {
   );
 };
 
-Button.defaultProps = {
-  color: "green",
-};
-
 export default Button;

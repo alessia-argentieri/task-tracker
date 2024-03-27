@@ -15,8 +15,4 @@ const Header: FC<Props> = ({ title }) => {
   );
 };
 
-Header.defaultProps = {
-  title: "My task tracker",
-};
-
 export default Header;

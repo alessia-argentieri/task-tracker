@@ -28,12 +28,25 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: green;
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   margin: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-form {
+  display: block;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px 5px 40px 5px;
   cursor: pointer;
   font-size: 15px;
 }
@@ -45,18 +58,47 @@ body {
   cursor: pointer;
 }
 
-/*.task h3 {
+.task h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-*/
 
 .task.reminder {
   border-left: 5px solid green;
 }
 
-.add-form {
+.h2 {
+  text-align: center;
+  color: steelblue;
+  margin-top: 50px;
+}
+
+.form-label {
+  font-size: 20px;
+}
+
+.form-input {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-label-check {
+  font-size: 20px;
+  flex: 1;
+}
+
+.form-input-check {
+  height: 40px;
+  width: 50px;
+  flex: 2;
 }
 
 footer {

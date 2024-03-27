@@ -1,14 +1,8 @@
 import { FC, useState, FormEventHandler } from "react";
 
-/*type Props = {
-    onAdd: ({
-        id: number;
-        text: string;
-        day: string;
-        reminder: boolean;
-      }) => 
+type Props = {
+  onAdd: (task: { text: string; day: string; reminder: boolean }) => void;
 };
-*/
 
 const AddTask: FC<Props> = ({ onAdd }) => {
   const [text, setText] = useState("");
@@ -51,7 +45,7 @@ const AddTask: FC<Props> = ({ onAdd }) => {
           className="form-input-check form-input"
           type="checkbox"
           onChange={(e) => setReminder(e.currentTarget.checked)}
-          value={reminder}
+          checked={reminder}
         />
       </div>
       <input type="submit" value="Save task" className="btn-form" />

@@ -26,6 +26,8 @@ const App: FC = () => {
     },
   ]);
 
+  const [showAddTask, setShowAddTask] = useState(true);
+
   const deleteTask = (id: number): void => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
@@ -38,12 +40,7 @@ const App: FC = () => {
     );
   };
 
-  const addTask = (task: {
-    id: number;
-    text: string;
-    day: string;
-    reminder: boolean;
-  }) => {
+  const addTask = (task: { text: string; day: string; reminder: boolean }) => {
     const id = Math.floor(Math.random() * 100) + 1;
 
     const newTask = { id, ...task };
@@ -53,8 +50,12 @@ const App: FC = () => {
 
   return (
     <div className="container">
-      <Header title="Task Tracker" />
-      <AddTask onAdd={addTask} />
+      <Header
+        title="Task Tracker"
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAddForm={showAddTask}
+      />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { FaTimes } from "react-icons/fa";
+import { format } from "date-fns";
 
 type Props = {
   task: {
@@ -22,7 +23,10 @@ const Task: FC<Props> = ({ task, onDelete, onToggle }) => {
         {task.text}
         <FaTimes style={{ color: "red" }} onClick={() => onDelete(task.id)} />
       </h3>
-      <p>{task.day}</p>
+      <p>
+        {format(new Date(task.day), "PPP")} at{" "}
+        {format(new Date(task.day), "HH:mm")}
+      </p>
     </div>
   );
 };

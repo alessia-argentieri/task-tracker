@@ -9,19 +9,19 @@ const App: FC = () => {
     {
       id: 1,
       text: "Buy gift for Sam",
-      day: "April 5th at 4pm",
+      day: "2024-04-07",
       reminder: true,
     },
     {
       id: 2,
       text: "Meet estate agent",
-      day: "April 6th at 3pm",
+      day: "2024-04-10",
       reminder: true,
     },
     {
       id: 3,
       text: "Grocery shopping",
-      day: "April 7th at 9am",
+      day: "2024-04-12",
       reminder: false,
     },
   ]);

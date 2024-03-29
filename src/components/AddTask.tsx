@@ -33,8 +33,7 @@ const AddTask: FC<Props> = ({ onAdd }) => {
         <label className="form-label">Day & Time</label>
         <input
           className="form-input"
-          type="text"
-          placeholder="Add Day & Time"
+          type="datetime-local"
           onChange={(e) => setDay(e.target.value)}
           value={day}
         />

@@ -2,13 +2,15 @@ import { FC } from "react";
 import { FaTimes } from "react-icons/fa";
 import { format } from "date-fns";
 
+export type Task = {
+  id: number;
+  text: string;
+  day: string;
+  reminder: boolean;
+};
+
 type Props = {
-  task: {
-    id: number;
-    text: string;
-    day: string;
-    reminder: boolean;
-  };
+  task: Task;
   onDelete: (id: number) => void;
   onToggle: (id: number) => void;
 };

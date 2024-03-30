@@ -1,13 +1,8 @@
 import { FC } from "react";
-import Task from "./Task";
+import TaskC, { Task } from "./Task";
 
 type Props = {
-  tasks: {
-    id: number;
-    text: string;
-    day: string;
-    reminder: boolean;
-  }[];
+  tasks: Task[];
   onDelete: (id: number) => void;
   onToggle: (id: number) => void;
 };
@@ -16,7 +11,7 @@ const Tasks: FC<Props> = ({ tasks, onDelete, onToggle }) => {
   return (
     <div>
       {tasks.map((task) => (
-        <Task
+        <TaskC
           key={task.id}
           task={task}
           onDelete={onDelete}

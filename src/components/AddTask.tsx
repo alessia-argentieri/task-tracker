@@ -1,7 +1,8 @@
 import { FC, useState, FormEventHandler } from "react";
+import { NewTask } from "./Task";
 
 type Props = {
-  onAdd: (task: { text: string; day: string; reminder: boolean }) => void;
+  onAdd: (task: NewTask) => void;
 };
 
 const AddTask: FC<Props> = ({ onAdd }) => {
@@ -11,7 +12,7 @@ const AddTask: FC<Props> = ({ onAdd }) => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    onAdd({ text, day, reminder });
+    onAdd({ text, day: new Date(day), reminder });
     setText("");
     setDay("");
     setReminder(false);

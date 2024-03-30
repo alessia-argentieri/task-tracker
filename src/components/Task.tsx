@@ -5,7 +5,13 @@ import { format } from "date-fns";
 export type Task = {
   id: number;
   text: string;
-  day: string;
+  day: Date;
+  reminder: boolean;
+};
+
+type NewTask = {
+  text: string;
+  day: Date;
   reminder: boolean;
 };
 
@@ -26,8 +32,7 @@ const Task: FC<Props> = ({ task, onDelete, onToggle }) => {
         <FaTimes style={{ color: "red" }} onClick={() => onDelete(task.id)} />
       </h3>
       <p>
-        {format(new Date(task.day), "PPP")} at{" "}
-        {format(new Date(task.day), "HH:mm")}
+        {format(task.day, "PPP")} at {format(task.day, "HH:mm")}
       </p>
     </div>
   );

@@ -9,7 +9,7 @@ export type Task = {
   reminder: boolean;
 };
 
-type NewTask = {
+export type NewTask = {
   text: string;
   day: Date;
   reminder: boolean;
